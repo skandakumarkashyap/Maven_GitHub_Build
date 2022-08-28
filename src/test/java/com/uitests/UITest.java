@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -24,7 +25,10 @@ public class UITest {
         }
         else if(browserName.contains("Edge")) {
             WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.addArguments("--remote-debugging-port=9222");
+            driver = new EdgeDriver(edgeOptions);
+
         }
 
         driver.manage().window().maximize();
