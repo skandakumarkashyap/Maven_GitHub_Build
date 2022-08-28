@@ -5,6 +5,7 @@
         <classes>
             <class name="com.uitests.UITest">
                </class>
+            
         </classes>
     </test>
 </suite>
