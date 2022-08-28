@@ -4,6 +4,7 @@
     <test name="Simple test">
         <classes>
             <class name="com.uitests.UITest">
+                
             </class>
         </classes>
     </test>
